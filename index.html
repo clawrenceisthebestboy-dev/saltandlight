@@ -39,7 +39,7 @@
     .service-card{background:var(--sand);border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.08);transition:transform .3s,box-shadow .3s}
     .service-card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(0,0,0,.12)}
     .card-banner{height:160px;display:flex;align-items:center;justify-content:center;font-size:3.5rem}
-    .salt-banner{background:linear-gradient(135deg,#e8ddd5,#d4c4b0)}
+    .salt-banner{min-height:160px}
     .red-banner{background:linear-gradient(135deg,#1C4A40,#2A6B5A)}
     .card-body{padding:26px}
     .card-body h3{font-family:'Playfair Display',serif;font-size:1.35rem;margin-bottom:10px}
@@ -125,7 +125,10 @@
   </div>
   <div class="services-grid">
     <div class="service-card">
-      <div class="card-banner salt-banner">🧂</div>
+      <div class="card-banner salt-banner" style="background:linear-gradient(145deg,#f5e6d0,#e8d5b0,#d4b896,#c9a87c);display:flex;align-items:center;justify-content:center;font-size:3rem;position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;background:radial-gradient(circle at 30% 40%,rgba(255,255,255,0.3),transparent 60%),radial-gradient(circle at 70% 70%,rgba(200,160,100,0.4),transparent 50%);"></div>
+  <span style="position:relative;z-index:1;font-size:2rem;opacity:.6">🏔️</span>
+</div>
       <div class="card-body">
         <h3>Salt Therapy (Halotherapy)</h3>
         <p>Our private salt rooms fill with micro-particles of pharmaceutical-grade salt. Natural, drug-free, and deeply relaxing — used for centuries to support respiratory health, skin, and immunity.</p>
@@ -139,7 +142,12 @@
       </div>
     </div>
     <div class="service-card">
-      <div class="card-banner red-banner">💡</div>
+      <div class="card-banner red-banner" style="background:#0a0000;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;min-height:160px">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(220,40,40,0.9) 0%,rgba(180,20,20,0.6) 40%,rgba(80,0,0,0.4) 70%,#0a0000 100%)"></div>
+  <div style="position:absolute;top:20%;left:15%;width:20px;height:80%;background:linear-gradient(180deg,#ff6060,#cc0000);border-radius:3px;box-shadow:0 0 20px 6px rgba(255,60,60,0.8);opacity:.9"></div>
+  <div style="position:absolute;top:20%;left:40%;width:20px;height:80%;background:linear-gradient(180deg,#ff6060,#cc0000);border-radius:3px;box-shadow:0 0 20px 6px rgba(255,60,60,0.8);opacity:.9"></div>
+  <div style="position:absolute;top:20%;left:65%;width:20px;height:80%;background:linear-gradient(180deg,#ff6060,#cc0000);border-radius:3px;box-shadow:0 0 20px 6px rgba(255,60,60,0.8);opacity:.9"></div>
+</div>
       <div class="card-body">
         <h3>Red Light Therapy</h3>
         <p>Our private booths deliver targeted wavelengths deep into cells, activating your body's natural healing. Loved by athletes, wellness seekers, and anyone wanting to look and feel their best.</p>

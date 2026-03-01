@@ -6,17 +6,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-:root{--gold:#D46A8A;--sand:#AED1C5;--dark:#1C3A34;--mid:#336655;--white:#C2DDD7;--sage:#AED1C5;--deep:#2A5048;--crystal:#F0A0B0}
+:root{--gold:#1C3A34;--pink:#D46A8A;--sand:#AED1C5;--dark:#1C3A34;--mid:#336655;--white:#C2DDD7;--sage:#AED1C5;--deep:#2A5048;--crystal:#F0A0B0}
 body{font-family:'Lato',sans-serif;background:var(--sand);color:var(--dark)}
 nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(26,58,52,.97);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;padding:14px 5%}
 .logo{text-decoration:none;display:flex;align-items:center}
 .logo img{height:50px;border-radius:8px;mix-blend-mode:screen}
 .logo-text{font-family:'Playfair Display',serif;color:#fff;font-size:1.3rem}
-.logo-text span{color:var(--gold)}
+.logo-text span{color:var(--dark)}
 .nav-links{display:flex;gap:28px;list-style:none;align-items:center}
 .nav-links a{color:#e8ddd5;text-decoration:none;font-size:.85rem;letter-spacing:1px;text-transform:uppercase}
-.nav-links a:hover,.nav-links a.active{color:var(--gold)}
-.nav-book{background:var(--gold);color:#fff!important;padding:9px 22px;border-radius:30px;font-weight:600}
+.nav-links a:hover,.nav-links a.active{color:var(--dark)}
+.nav-book{background:var(--pink);color:#fff!important;padding:9px 22px;border-radius:30px;font-weight:600}
 .page-hero{background:linear-gradient(135deg,#0D2B26,#1C4A40,#2A6B5A,#4A9880);padding:130px 5% 70px;text-align:center}
 .page-hero h1{font-family:'Playfair Display',serif;color:#fff;font-size:3rem;margin-bottom:14px}
 .page-hero p{color:rgba(255,255,255,.8);font-size:1.05rem;max-width:560px;margin:0 auto}
@@ -28,12 +28,12 @@ nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(26,58,52,.97);ba
 .svc-visual{border-radius:20px;height:360px;display:flex;align-items:center;justify-content:center;font-size:7rem;flex-shrink:0}
 .halored-vis{background:linear-gradient(145deg,#1C4A40,#2A6B5A,#D46A8A)}
 .pemi-vis{background:linear-gradient(145deg,#0D2B26,#1C4A40,#4A9880)}
-.svc-content .label{color:var(--gold);font-size:.8rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
+.svc-content .label{color:var(--dark);font-size:.8rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
 .svc-content h2{font-family:'Playfair Display',serif;font-size:2.4rem;color:var(--dark);margin-bottom:16px}
 .svc-content p{color:#4A6860;line-height:1.85;margin-bottom:16px;font-size:.97rem}
 .tags{display:flex;flex-wrap:wrap;gap:9px;margin:20px 0 28px}
 .tag{background:#D8EDEA;border:1.5px solid var(--sage);border-radius:20px;padding:5px 15px;font-size:.8rem;color:var(--mid);font-weight:600}
-.btn{display:inline-block;padding:13px 30px;border-radius:40px;font-weight:600;text-decoration:none;font-size:.9rem;background:var(--gold);color:#fff}
+.btn{color:#fff;display:inline-block;padding:13px 30px;border-radius:40px;font-weight:600;text-decoration:none;font-size:.9rem;background:var(--pink);color:#fff}
 .science-box{background:var(--dark);color:#fff;border-radius:20px;padding:52px;margin-bottom:70px}
 .science-box .section-tag{color:var(--sage)}
 .science-box h2{font-family:'Playfair Display',serif;font-size:2rem;margin:8px 0 20px;color:#fff}
@@ -49,7 +49,7 @@ nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(26,58,52,.97);ba
 .btn-light{background:#D8EDEA;color:var(--deep)}
 footer{background:var(--dark);color:rgba(255,255,255,.55);text-align:center;padding:40px 20px;font-size:.85rem}
 footer .foot-logo{font-family:'Playfair Display',serif;color:#fff;font-size:1.2rem;margin-bottom:8px}
-footer a{color:var(--gold);text-decoration:none}
+footer a{color:var(--dark);text-decoration:none}
 @media(max-width:720px){
   .service-block,.service-block.flip{grid-template-columns:1fr;direction:ltr}
   .svc-visual{height:200px;font-size:4rem}
@@ -136,7 +136,7 @@ footer a{color:var(--gold);text-decoration:none}
     <div class="faq-item"><h3>What should I wear?</h3><p>Comfortable, loose-fitting clothing. For red light therapy, more skin exposure = better results, so light layers are ideal.</p></div>
     <div class="faq-item"><h3>Can I combine both therapies in one visit?</h3><p>Absolutely — many clients do. Ask about our combo packages when you book.</p></div>
     <div class="faq-item"><h3>Do you take insurance?</h3><p>We don't bill insurance directly. Payment is collected in person — cash pricing shown, card adds 3.5%.</p></div>
-    <div class="faq-item"><h3>Do you offer memberships?</h3><p>Yes! Monthly memberships for HaloRed start at $175/mo. PEMI unlimited is $200/mo. <a href="pricing.html" style="color:var(--gold)">See all pricing →</a></p></div>
+    <div class="faq-item"><h3>Do you offer memberships?</h3><p>Yes! Monthly memberships for HaloRed start at $175/mo. PEMI unlimited is $200/mo. <a href="pricing.html" style="color:var(--dark)">See all pricing →</a></p></div>
   </div>
 
   <div class="cta-box">

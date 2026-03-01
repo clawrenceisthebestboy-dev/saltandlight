@@ -91,7 +91,28 @@
     .social-links a:hover{background:var(--pink);color:var(--dark)}
     .footer-copy{color:rgba(255,255,255,.25);font-size:.78rem}
     @media(max-width:700px){.nav-links{display:none}.btn-outline{display:none}.about-inner,.contact-inner{grid-template-columns:1fr}.about-visual{height:180px;font-size:3.5rem}.steps{flex-direction:column;align-items:center}}
-  </style>
+  
+    /* Scroll animations */
+    .fade-in{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+    .fade-in.visible{opacity:1;transform:translateY(0)}
+    .fade-left{opacity:0;transform:translateX(-40px);transition:opacity .7s ease,transform .7s ease}
+    .fade-left.visible{opacity:1;transform:translateX(0)}
+    .fade-right{opacity:0;transform:translateX(40px);transition:opacity .7s ease,transform .7s ease}
+    .fade-right.visible{opacity:1;transform:translateX(0)}
+    /* Logo pulse */
+    @keyframes pulse-glow{0%,100%{filter:drop-shadow(0 0 8px rgba(212,106,138,0.3))}50%{filter:drop-shadow(0 0 24px rgba(212,106,138,0.7))}}
+    .logo-hero img{animation:pulse-glow 3s ease-in-out infinite}
+    /* Service card hover */
+    .service-card{transition:transform .3s ease,box-shadow .3s ease;cursor:pointer}
+    .service-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(0,0,0,0.15)}
+    /* Button pulse */
+    .btn-gold{animation:btn-pulse 2.5s ease-in-out infinite}
+    @keyframes btn-pulse{0%,100%{box-shadow:0 0 0 0 rgba(212,106,138,0.4)}70%{box-shadow:0 0 0 12px rgba(212,106,138,0)}}
+    /* Smooth scroll */
+    html{scroll-behavior:smooth}
+    /* Benefit icon bounce */
+    .benefit-item:hover .benefit-icon{transform:scale(1.3);transition:transform .2s}
+</style>
 </head>
 <body>
 
@@ -107,7 +128,7 @@
 </nav>
 
 <!-- Logo Section -->
-<section style="background:#1C3A34;padding:50px 20px 40px;text-align:center;border-bottom:1px solid rgba(255,255,255,.08)">
+<section class="logo-hero" style="background:#1C3A34;padding:50px 20px 40px;text-align:center;border-bottom:1px solid rgba(255,255,255,.08)">
   <img src="logo.png" alt="Salt &amp; Light Wellness" style="width:260px;max-width:80%">
 </section>
 
@@ -314,5 +335,36 @@
   <p class="footer-copy">© 2026 Salt &amp; Light Wellness. All rights reserved. | North Conway, New Hampshire</p>
 </footer>
 
+
+<script>
+// Intersection Observer for scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+    }
+  });
+}, {threshold: 0.15});
+
+document.querySelectorAll('.service-card, .benefit-item, .step-card, .price-preview, .section-tag, h2').forEach(el => {
+  el.classList.add('fade-in');
+  observer.observe(el);
+});
+
+document.querySelectorAll('.service-card:nth-child(odd)').forEach(el => {
+  el.classList.remove('fade-in');
+  el.classList.add('fade-left');
+  observer.observe(el);
+});
+
+document.querySelectorAll('.service-card:nth-child(even)').forEach(el => {
+  el.classList.remove('fade-in');
+  el.classList.add('fade-right');
+  observer.observe(el);
+});
+
+// Make logo section always visible
+document.querySelector('.logo-hero')?.classList.add('visible');
+</script>
 </body>
 </html>

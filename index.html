@@ -117,7 +117,7 @@
 <body>
 
 <nav>
-  <a href="index.html" class="logo" style="text-decoration:none"><img src="logo.png" alt="Salt &amp; Light Wellness" style="height:52px;mix-blend-mode:screen"></a>
+  <a href="index.html" class="logo" style="text-decoration:none"><img src="logo.png" alt="Salt &amp; Light Wellness" style="height:52px"></a>
   <ul class="nav-links">
     <li><a href="services.html">Services</a></li>
     <li><a href="pricing.html">Pricing</a></li>
@@ -128,7 +128,7 @@
 </nav>
 
 <!-- Logo Section -->
-<section class="logo-hero" style="background:#1C3A34;padding:50px 20px 40px;text-align:center;border-bottom:1px solid rgba(255,255,255,.08)">
+<section class="logo-hero" style="background:transparent;padding:40px 20px 30px;text-align:center">
   <img src="logo.png" alt="Salt &amp; Light Wellness" style="width:260px;max-width:80%">
 </section>
 
@@ -154,36 +154,46 @@
     <h2>Our Therapies</h2>
     <p class="section-sub">Two powerful, science-backed therapies in private, peaceful booths — designed for your total wellness.</p>
   </div>
-  <div class="services-grid">
+  <div class="services-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
     <div class="service-card">
-      <div class="card-banner" style="overflow:hidden;padding:0;height:160px"><img src="halored-booth.jpg" alt="HaloRed Salt + Red Light Booths" style="width:100%;height:100%;object-fit:cover;object-position:center 40%"></div>
+      <div class="card-banner" style="overflow:hidden;padding:0;height:180px"><img src="halored-booth.jpg" alt="Small Red Light / Halotherapy Booth" style="width:100%;height:100%;object-fit:cover;object-position:center 40%"></div>
       <div class="card-body">
-        <h3>HaloRed — Salt + Red Light</h3>
-        <p>One private booth, two therapies at once. Pharmaceutical-grade salt micro-particles fill the air while Medical Grade 2 red and near-infrared light penetrates deep into your cells. 15–20 minutes, once per day.</p>
+        <h3>Small Red Light / Halotherapy Booth</h3>
+        <p>Experience the healing power of salt therapy and Medical Grade 2 red &amp; near-infrared light simultaneously in our cozy private booth. Pharmaceutical-grade salt micro-particles clear airways while red light penetrates deep into your cells. Up to 20 min/day.</p>
         <div class="benefit-tags">
           <span class="tag">Respiratory Relief</span>
-          <span class="tag">Skin Health &amp; Glow</span>
+          <span class="tag">Skin Health</span>
           <span class="tag">Muscle Recovery</span>
-          <span class="tag">Immune Support</span>
           <span class="tag">Anti-Aging</span>
-          <span class="tag">Pain Relief</span>
           <span class="tag">Better Sleep</span>
-          <span class="tag">Mood &amp; Energy</span>
         </div>
       </div>
     </div>
     <div class="service-card">
-      <div class="card-banner" style="overflow:hidden;padding:0;height:160px"><img src="pemi-client.jpg" alt="Purewave PEMI Pad" style="width:100%;height:100%;object-fit:cover;object-position:left center"></div>
+      <div class="card-banner" style="overflow:hidden;padding:0;height:180px"><img src="room-red.jpg" alt="Medium Red Light / Halotherapy Booth" style="width:100%;height:100%;object-fit:cover;object-position:center 40%"></div>
       <div class="card-body">
-        <h3>Purewave PEMI</h3>
-        <p>Lie on the PEMI pad and let Extremely Low Frequency (ELF) electromagnetic pulses — the same natural frequencies your body runs on — restore weak cellular cycles and recharge your energy from the inside out. Sessions 10 or 20 minutes.</p>
+        <h3>Medium Red Light / Halotherapy Booth</h3>
+        <p>Our larger private booth offers the same powerful combination of salt therapy and Medical Grade 2 red light therapy with more space to relax and unwind. Perfect for those who prefer extra room. Up to 20 min/day.</p>
+        <div class="benefit-tags">
+          <span class="tag">Respiratory Relief</span>
+          <span class="tag">Immune Support</span>
+          <span class="tag">Pain Relief</span>
+          <span class="tag">Mood &amp; Energy</span>
+          <span class="tag">Anti-Aging</span>
+        </div>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="card-banner" style="overflow:hidden;padding:0;height:180px"><img src="pemi-client.jpg" alt="Purewave PEMI Mat" style="width:100%;height:100%;object-fit:cover;object-position:left center"></div>
+      <div class="card-body">
+        <h3>Purewave PEMI Mat</h3>
+        <p>Lie on the PEMI mat and let Extremely Low Frequency (ELF) electromagnetic pulses — the same natural frequencies your body runs on — restore weak cellular cycles and recharge your energy from the inside out. Up to 30 min/day.</p>
         <div class="benefit-tags">
           <span class="tag">Cell Restoration</span>
           <span class="tag">Deep Relaxation</span>
           <span class="tag">Faster Recovery</span>
           <span class="tag">Less Inflammation</span>
           <span class="tag">More Energy</span>
-          <span class="tag">Nervous System Reset</span>
           <span class="tag">Better Circulation</span>
         </div>
       </div>
@@ -200,7 +210,7 @@
       <img src="room-red2.jpg" alt="Red Light Therapy Room" style="width:100%;height:220px;object-fit:cover;object-position:center">
       <img src="salt-wall-real.jpg" alt="Himalayan Salt Wall" style="width:100%;height:220px;object-fit:cover">
       <img src="room.jpg" alt="Salt & Light Wellness Room" style="width:100%;height:220px;object-fit:cover;object-position:center">
-      <img src="halored-booth.jpg" alt="HaloRed Therapy Booths" style="width:100%;height:220px;object-fit:cover">
+      <img src="halored-booth.jpg" alt="Red Light / Halotherapy Booth" style="width:100%;height:220px;object-fit:cover">
     </div>
     <p style="text-align:center;margin-top:20px;color:#4A6860;font-size:.95rem">Private, peaceful, and designed for your total wellness — inside Meraki Salon & Spa, North Conway NH</p>
   </div>
@@ -273,25 +283,102 @@
   <div class="section-tag">✦ Pricing</div>
   <h2>Simple, Clear Pricing</h2>
   <p class="section-sub" style="margin:0 auto 36px">No hidden fees. Packages available for regular visitors.</p>
-  <div class="pricing-cards">
-    <div class="pricing-card">
-      <h3>Single Session</h3>
-      <div class="price">Call Us</div>
-      <p>One session — salt or red light therapy</p>
-      <a href="#contact" class="btn btn-gold">Get Pricing</a>
+  <div style="max-width:900px;margin:0 auto">
+    <p style="text-align:center;margin-bottom:8px;color:var(--mid);font-size:.9rem">Cash pricing listed. A 3.5% processing fee applies to card payments.</p>
+
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.3rem;margin:32px 0 14px;color:var(--dark);text-align:center">Single Sessions</h3>
+    <div class="pricing-cards">
+      <div class="pricing-card">
+        <h3>Red Light / Halotherapy Booth</h3>
+        <div class="price" style="font-size:1.8rem">$40</div>
+        <p>Small or Medium booth · Up to 20 min</p>
+        <a href="tel:+12073554141" class="btn btn-gold">📞 Book Now</a>
+      </div>
+      <div class="pricing-card">
+        <h3>PEMI Mat</h3>
+        <div class="price" style="font-size:1.8rem">$35</div>
+        <p>Single session · Up to 30 min</p>
+        <a href="tel:+12073554141" class="btn btn-gold">📞 Book Now</a>
+      </div>
+      <div class="pricing-card">
+        <h3>PEMI Mat — 10 min</h3>
+        <div class="price" style="font-size:1.8rem">$15</div>
+        <p>Short session · 10 minutes</p>
+        <a href="tel:+12073554141" class="btn btn-gold">📞 Book Now</a>
+      </div>
+      <div class="pricing-card">
+        <h3>PEMI Mat — 20 min</h3>
+        <div class="price" style="font-size:1.8rem">$25</div>
+        <p>Standard session · 20 minutes</p>
+        <a href="tel:+12073554141" class="btn btn-gold">📞 Book Now</a>
+      </div>
     </div>
-    <div class="pricing-card featured">
-      <h3>Session Package</h3>
-      <div class="price">Best Value</div>
-      <p>Multiple sessions at a discounted rate</p>
-      <a href="#contact" class="btn btn-gold">Ask About Packages</a>
+
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.3rem;margin:40px 0 14px;color:var(--dark);text-align:center">Packages</h3>
+    <div class="pricing-cards">
+      <div class="pricing-card featured">
+        <h3>5-Pack Combo</h3>
+        <div class="price" style="font-size:1.8rem">$275</div>
+        <p>5 sessions · Mix &amp; match booths + PEMI</p>
+        <a href="tel:+12073554141" class="btn btn-gold">📞 Book Now</a>
+      </div>
+      <div class="pricing-card">
+        <h3>8-Pack — Red Light Booth</h3>
+        <div class="price" style="font-size:1.8rem">$240</div>
+        <p>8 booth sessions · Never expire</p>
+        <a href="tel:+12073554141" class="btn btn-gold">📞 Book Now</a>
+      </div>
+      <div class="pricing-card">
+        <h3>8-Pack — PEMI 20 min</h3>
+        <div class="price" style="font-size:1.8rem">$160</div>
+        <p>8 × 20-min PEMI sessions · Never expire</p>
+        <a href="tel:+12073554141" class="btn btn-gold">📞 Book Now</a>
+      </div>
+      <div class="pricing-card">
+        <h3>8-Pack — PEMI 30 min</h3>
+        <div class="price" style="font-size:1.8rem">$214</div>
+        <p>8 × 30-min PEMI sessions · Never expire</p>
+        <a href="tel:+12073554141" class="btn btn-gold">📞 Book Now</a>
+      </div>
     </div>
-    <div class="pricing-card">
-      <h3>Membership</h3>
-      <div class="price">Monthly</div>
-      <p>Unlimited access at our best monthly rate</p>
-      <a href="#contact" class="btn btn-gold">Learn More</a>
+
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.3rem;margin:40px 0 14px;color:var(--dark);text-align:center">Monthly Memberships</h3>
+    <div class="pricing-cards">
+      <div class="pricing-card">
+        <h3>Bronze</h3>
+        <div class="price" style="font-size:1.8rem">$175<span style="font-size:1rem">/mo</span></div>
+        <p>Red Light / Halotherapy · Monthly membership</p>
+        <a href="tel:+12073554141" class="btn btn-gold">📞 Book Now</a>
+      </div>
+      <div class="pricing-card">
+        <h3>Silver</h3>
+        <div class="price" style="font-size:1.8rem">$225<span style="font-size:1rem">/mo</span></div>
+        <p>Red Light / Halotherapy · Monthly membership</p>
+        <a href="tel:+12073554141" class="btn btn-gold">📞 Book Now</a>
+      </div>
+      <div class="pricing-card featured">
+        <h3>Gold</h3>
+        <div class="price" style="font-size:1.8rem">$300<span style="font-size:1rem">/mo</span></div>
+        <p>Red Light / Halotherapy · Monthly membership</p>
+        <a href="tel:+12073554141" class="btn btn-gold">📞 Book Now</a>
+      </div>
+      <div class="pricing-card">
+        <h3>Platinum</h3>
+        <div class="price" style="font-size:1.8rem">$350<span style="font-size:1rem">/mo</span></div>
+        <p>Red Light / Halotherapy · Monthly membership</p>
+        <a href="tel:+12073554141" class="btn btn-gold">📞 Book Now</a>
+      </div>
+      <div class="pricing-card">
+        <h3>PEMI Unlimited</h3>
+        <div class="price" style="font-size:1.8rem">$200<span style="font-size:1rem">/mo</span></div>
+        <p>Unlimited PEMI sessions · Monthly</p>
+        <a href="tel:+12073554141" class="btn btn-gold">📞 Book Now</a>
+      </div>
     </div>
+
+    <p style="text-align:center;margin-top:28px;color:var(--mid);font-size:.88rem">
+      💳 Card payments: add 3.5% · 💵 Cash always accepted · Packages never expire · Annual waiver required
+    </p>
   </div>
 </section>
 
@@ -303,10 +390,10 @@
   <div class="contact-inner">
     <div class="contact-info">
       <h3>Visit Us</h3>
-      <div class="info-item"><div class="info-icon">📍</div><p><strong>Location</strong>Inside Meraki Salon &amp; Spa<br>1847 White Mountain Hwy<br>North Conway, NH</p></div>
+      <div class="info-item"><div class="info-icon">📍</div><p><strong>Location</strong>Inside Meraki Salon &amp; Spa<br>2967 White Mountain Hwy<br>North Conway, NH</p></div>
       <div class="info-item"><div class="info-icon">📞</div><p><strong>Phone</strong><a href="tel:+12073554141" style="color:var(--dark)">(207) 355-4141</a></p></div>
-      <div class="info-item"><div class="info-icon">⏰</div><p><strong>Hours</strong>Mon–Sat: 9am – 7pm<br>Sunday: 10am – 5pm</p></div>
-      <div class="info-item"><div class="info-icon">✉️</div><p><strong>Email</strong>info@saltandlightnh.com</p></div>
+      <div class="info-item"><div class="info-icon">⏰</div><p><strong>Hours</strong>Mon–Sat: By Appointment<br>Sunday: Closed</p></div>
+      <div class="info-item"><div class="info-icon">✉️</div><p><strong>Email</strong>saltandlightwellnessnh@gmail.com</p></div>
     </div>
     <div class="contact-form">
       <h3>Send a Message</h3>
@@ -315,7 +402,7 @@
         <div class="form-group"><label>Email</label><input type="email" placeholder="jane@email.com" required /></div>
         <div class="form-group"><label>Phone</label><input type="tel" placeholder="(603) 555-0000" /></div>
         <div class="form-group"><label>Service Interested In</label>
-          <select><option>Salt Therapy</option><option>HaloRed — Salt + Red Light</option><option>Both / Not Sure</option></select>
+          <select><option>PEMI Mat</option><option>Small Red Light / Halotherapy Booth</option><option>Medium Red Light / Halotherapy Booth</option><option>Not Sure</option></select>
         </div>
         <div class="form-group"><label>Message</label><textarea placeholder="Any questions or preferred times?"></textarea></div>
         <button type="submit" class="btn btn-gold btn-full">Send Message ✦</button>

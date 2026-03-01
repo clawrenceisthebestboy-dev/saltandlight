@@ -33,6 +33,19 @@ h2{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--dark);margi
 .price-card .rule{font-size:.78rem;color:var(--mid);margin-top:10px;padding-top:10px;border-top:1px solid #f0e8e0;font-style:italic}
 .book-cta{text-align:center;margin-top:60px}
 .btn{color:#fff;display:inline-block;padding:15px 36px;border-radius:40px;font-size:.95rem;font-weight:600;text-decoration:none;background:var(--pink);color:var(--dark)}
+
+    .price-section{margin-bottom:60px}
+    .price-section h2{font-family:'Playfair Display',serif;font-size:1.7rem;margin-bottom:24px;color:var(--dark)}
+    .price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+    .price-card{background:#fff;border-radius:16px;padding:28px;border:2px solid var(--sage);position:relative;text-align:center}
+    .price-card h3{font-size:1rem;font-weight:700;margin-bottom:12px;color:var(--dark)}
+    .price-card .amount{font-size:2.4rem;font-weight:800;color:#1C3A34;margin-bottom:4px}
+    .price-card .sub{font-size:.82rem;color:#4A6860;margin-bottom:10px}
+    .price-card .rule{font-size:.78rem;color:#6A8880;border-top:1px solid var(--sage);padding-top:10px;margin-top:10px;line-height:1.6}
+    .featured-card{border-color:#D46A8A;box-shadow:0 4px 20px rgba(212,106,138,0.15)}
+    .badge{display:inline-block;background:#D46A8A;color:#fff;font-size:.7rem;font-weight:700;padding:3px 12px;border-radius:20px;margin-bottom:10px;letter-spacing:1px;text-transform:uppercase}
+    .price-btn{display:inline-block;margin-top:16px;background:#1C3A34;color:#fff;padding:9px 22px;border-radius:30px;font-size:.82rem;font-weight:700;text-decoration:none}
+    .price-btn:hover{background:#D46A8A}
 </style>
 </head>
 <body>
@@ -49,45 +62,155 @@ h2{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--dark);margi
   <p>No hidden fees. Cash pricing shown. Card adds 3.5%.</p>
 </div>
 <div class="wrap">
-  <div class="toggle-wrap">
-    <div class="toggle">
-      <button class="active" onclick="setMode('cash',this)">Cash Pricing</button>
-      <button onclick="setMode('card',this)">Card Pricing (+3.5%)</button>
+  <!-- Cash/Card Toggle -->
+  <div style="text-align:center;margin-bottom:40px">
+    <div style="display:inline-flex;background:#fff;border-radius:30px;padding:4px;border:2px solid var(--sage)">
+      <button onclick="showCash()" id="btn-cash" style="padding:10px 28px;border-radius:26px;border:none;background:#1C3A34;color:#fff;font-weight:700;cursor:pointer;font-size:.9rem">Cash</button>
+      <button onclick="showCard()" id="btn-card" style="padding:10px 28px;border-radius:26px;border:none;background:transparent;color:#4A6860;font-weight:700;cursor:pointer;font-size:.9rem">Card (+3.5%)</button>
+    </div>
+    <p style="margin-top:12px;font-size:.85rem;color:#4A6860">Prices shown are <strong>cash pricing</strong>. Card payments incur a 3.5% processing fee. Payment collected in person.</p>
+  </div>
+
+  <!-- Single Sessions -->
+  <div class="price-section">
+    <h2>Single Sessions</h2>
+    <div class="price-grid">
+      <div class="price-card">
+        <h3>HaloRed — Salt + Red Light</h3>
+        <div class="amount cash-price">$40</div>
+        <div class="amount card-price" style="display:none">$41.40</div>
+        <div class="sub">15–20 minutes</div>
+        <div class="rule">Can be used once per day up to 20 min in a 24-hour period. Benefits start at 15 min. Medical Grade 2.</div>
+        <a href="tel:+12073554141" class="price-btn">Book Now</a>
+      </div>
+      <div class="price-card">
+        <h3>PEMI Mat Session</h3>
+        <div class="amount cash-price">$35</div>
+        <div class="amount card-price" style="display:none">$36.23</div>
+        <div class="sub">30 minutes</div>
+        <div class="rule">Up to 30 minutes per day on open days. Closed Sundays. Medical Grade 2.</div>
+        <a href="tel:+12073554141" class="price-btn">Book Now</a>
+      </div>
     </div>
   </div>
-  <div class="notice">⚠️ Prices shown are <strong>cash pricing</strong>. Card payments incur a 3.5% processing fee. Payment collected in person.</div>
 
-  <h2>Single Sessions</h2>
-  <div class="price-grid">
-    <div class="price-card"><h3>HaloRed — Red Light Session</h3><div class="amount" data-cash="40">$40</div><div class="sub">15–20 minutes</div><div class="card-price" style="display:none">Card: $41.40</div><div class="rule">Can be used once per day up to 20 min in a 24-hour period. Benefits start at 15 min. Medical Grade 2.</div></div>
-    <div class="price-card"><h3>Purewave PEMI — 10 min</h3><div class="amount" data-cash="15">$15</div><div class="sub">10 minutes</div><div class="card-price" style="display:none">Card: $15.53</div></div>
-    <div class="price-card"><h3>Purewave PEMI — 20 min</h3><div class="amount" data-cash="25">$25</div><div class="sub">20 minutes</div><div class="card-price" style="display:none">Card: $25.88</div></div>
+  <!-- Packs -->
+  <div class="price-section">
+    <h2>Session Packs <span style="font-size:.75rem;color:#4A6860;font-weight:400">(Never expire)</span></h2>
+    <div class="price-grid">
+      <div class="price-card featured-card">
+        <div class="badge">Best Value</div>
+        <h3>5-Pack — HaloRed + PEMI</h3>
+        <div class="amount cash-price">$275</div>
+        <div class="amount card-price" style="display:none">$284.63</div>
+        <div class="sub">5 sessions, mix &amp; match</div>
+        <div class="rule">Allows 20 minutes on the PEMI for this pack. Packs do not expire monthly.</div>
+        <a href="tel:+12073554141" class="price-btn">Book Now</a>
+      </div>
+      <div class="price-card">
+        <h3>8-Pack — HaloRed</h3>
+        <div class="amount cash-price">$240</div>
+        <div class="amount card-price" style="display:none">$248.40</div>
+        <div class="sub">8 HaloRed sessions</div>
+        <div class="rule">Does not expire monthly.</div>
+        <a href="tel:+12073554141" class="price-btn">Book Now</a>
+      </div>
+      <div class="price-card">
+        <h3>8-Pack PEMI — 20 min</h3>
+        <div class="amount cash-price">$160</div>
+        <div class="amount card-price" style="display:none">$165.60</div>
+        <div class="sub">8 × 20-minute PEMI sessions</div>
+        <div class="rule">Add-on pack. Does not expire monthly.</div>
+        <a href="tel:+12073554141" class="price-btn">Book Now</a>
+      </div>
+      <div class="price-card">
+        <h3>8-Pack PEMI — 30 min</h3>
+        <div class="amount cash-price">$214</div>
+        <div class="amount card-price" style="display:none">$221.49</div>
+        <div class="sub">8 × 30-minute PEMI sessions</div>
+        <div class="rule">Add-on pack. Does not expire monthly.</div>
+        <a href="tel:+12073554141" class="price-btn">Book Now</a>
+      </div>
+    </div>
   </div>
 
-  <h2>Monthly Memberships — Halo/Red</h2>
-  <div class="price-grid">
-    <div class="price-card"><h3>🥉 Bronze</h3><div class="amount" data-cash="175">$175</div><div class="sub">Up to 6 sessions/month</div><div class="card-price" style="display:none">Card: $181.13</div></div>
-    <div class="price-card"><h3>🥈 Silver</h3><div class="amount" data-cash="225">$225</div><div class="sub">Up to 10 sessions/month</div><div class="card-price" style="display:none">Card: $232.88</div></div>
-    <div class="price-card"><h3>🥇 Gold</h3><div class="amount" data-cash="300">$300</div><div class="sub">Up to 15 sessions/month</div><div class="card-price" style="display:none">Card: $310.50</div></div>
-    <div class="price-card"><h3>💎 Platinum</h3><div class="amount" data-cash="350">$350</div><div class="sub">Unlimited sessions/month</div><div class="card-price" style="display:none">Card: $362.25</div></div>
+  <!-- HaloRed Memberships -->
+  <div class="price-section">
+    <h2>Monthly Memberships — HaloRed</h2>
+    <div class="price-grid">
+      <div class="price-card">
+        <h3>Bronze</h3>
+        <div class="amount cash-price">$175</div>
+        <div class="amount card-price" style="display:none">$181.13</div>
+        <div class="sub">Up to 6 sessions/month</div>
+        <a href="tel:+12073554141" class="price-btn">Book Now</a>
+      </div>
+      <div class="price-card">
+        <h3>Silver</h3>
+        <div class="amount cash-price">$225</div>
+        <div class="amount card-price" style="display:none">$232.88</div>
+        <div class="sub">Up to 10 sessions/month</div>
+        <a href="tel:+12073554141" class="price-btn">Book Now</a>
+      </div>
+      <div class="price-card featured-card">
+        <div class="badge">Popular</div>
+        <h3>Gold</h3>
+        <div class="amount cash-price">$300</div>
+        <div class="amount card-price" style="display:none">$310.50</div>
+        <div class="sub">Up to 15 sessions/month</div>
+        <a href="tel:+12073554141" class="price-btn">Book Now</a>
+      </div>
+      <div class="price-card">
+        <h3>Platinum</h3>
+        <div class="amount cash-price">$350</div>
+        <div class="amount card-price" style="display:none">$362.25</div>
+        <div class="sub">Unlimited sessions/month</div>
+        <a href="tel:+12073554141" class="price-btn">Book Now</a>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:.85rem;color:#4A6860;margin-top:16px">HaloRed can be used once per day up to 20 minutes in a 24-hour period. Benefits start at 15 min. Devices are Medical Grade 2.</p>
   </div>
 
-  <h2>Monthly Membership — PEMI</h2>
-  <div class="price-grid">
-    <div class="price-card"><h3>PEMI Monthly</h3><div class="amount" data-cash="200">$200</div><div class="sub">Unlimited — up to 30 min/day</div><div class="card-price" style="display:none">Card: $207.00</div><div class="rule">Up to 30 minutes per day on open days. Closed Sundays.</div></div>
+  <!-- PEMI Membership -->
+  <div class="price-section">
+    <h2>Monthly Membership — PEMI</h2>
+    <div class="price-grid" style="max-width:360px;margin:0 auto">
+      <div class="price-card featured-card">
+        <h3>PEMI Unlimited</h3>
+        <div class="amount cash-price">$200</div>
+        <div class="amount card-price" style="display:none">$207.00</div>
+        <div class="sub">Unlimited sessions/month</div>
+        <div class="rule">Up to 30 minutes per day on open days. Closed Sundays.</div>
+        <a href="tel:+12073554141" class="price-btn">Book Now</a>
+      </div>
+    </div>
   </div>
 
-  <h2>Packs <span style="font-size:.9rem;color:var(--mid);font-family:'Lato'">(No monthly expiry)</span></h2>
-  <div class="price-grid">
-    <div class="price-card"><h3>5-Pack: Halo/Red + PEMI</h3><div class="amount" data-cash="275">$275</div><div class="sub">5 sessions each</div><div class="card-price" style="display:none">Card: $284.63</div><div class="rule">Allows 20 minutes on the PEMI for this pack.</div></div>
-    <div class="price-card"><h3>8-Pack: Halo/Red</h3><div class="amount" data-cash="240">$240</div><div class="sub">8 sessions</div><div class="card-price" style="display:none">Card: $248.40</div></div>
-    <div class="price-card"><h3>Add-on: 8-Pack PEMI 20-min</h3><div class="amount" data-cash="160">$160</div><div class="sub">8 × 20-minute sessions</div><div class="card-price" style="display:none">Card: $165.60</div></div>
-    <div class="price-card"><h3>Add-on: 8-Pack PEMI 30-min</h3><div class="amount" data-cash="214">$214</div><div class="sub">8 × 30-minute sessions</div><div class="card-price" style="display:none">Card: $221.49</div></div>
+  <!-- CTA -->
+  <div style="background:linear-gradient(135deg,#1C4A40,#2A6B5A);border-radius:20px;padding:50px;text-align:center;margin-top:50px">
+    <h2 style="font-family:'Playfair Display',serif;color:#fff;font-size:1.9rem;margin-bottom:12px">Ready to Start?</h2>
+    <p style="color:rgba(255,255,255,.75);margin-bottom:28px">Call us to book your first session. Pay in person — cash or card.</p>
+    <a href="tel:+12073554141" style="display:inline-block;background:#D46A8A;color:#fff;padding:14px 36px;border-radius:40px;font-weight:700;font-size:1rem;text-decoration:none">📞 Call to Book — (207) 355-4141</a>
   </div>
 
-  <div class="book-cta">
-    <a href="booking.html" class="btn">Reserve Your Session →</a>
-  </div>
+<script>
+function showCash(){
+  document.querySelectorAll('.cash-price').forEach(e=>e.style.display='block');
+  document.querySelectorAll('.card-price').forEach(e=>e.style.display='none');
+  document.getElementById('btn-cash').style.background='#1C3A34';
+  document.getElementById('btn-cash').style.color='#fff';
+  document.getElementById('btn-card').style.background='transparent';
+  document.getElementById('btn-card').style.color='#4A6860';
+}
+function showCard(){
+  document.querySelectorAll('.cash-price').forEach(e=>e.style.display='none');
+  document.querySelectorAll('.card-price').forEach(e=>e.style.display='block');
+  document.getElementById('btn-card').style.background='#1C3A34';
+  document.getElementById('btn-card').style.color='#fff';
+  document.getElementById('btn-cash').style.background='transparent';
+  document.getElementById('btn-cash').style.color='#4A6860';
+}
+</script>
 </div>
 <script>
 function setMode(mode, btn) {

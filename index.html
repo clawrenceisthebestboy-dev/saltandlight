@@ -7,16 +7,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;600&display=swap" rel="stylesheet" />
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--gold:#F0A030;--red:#C0392B;--orange:#E8601C;--pink:#D46A8A;--sand:#FFF8F2;--dark:#1A1A1A;--mid:#8A4A3A;--white:#FFFDF9;--crystal:#E8789A;--orb:#E8401C}
+    :root{--gold:#D46A8A;--red:#4A8878;--sand:#EEF6F2;--dark:#1C3A34;--mid:#336655;--white:#F5FAFA;--sage:#B8D8D0;--deep:#2A5A50;--crystal:#F0A0B0}
     html{scroll-behavior:smooth}
-    body{font-family:'Lato',sans-serif;background:var(--white);color:var(--dark);line-height:1.7}
+    body{font-family:'Lato',sans-serif;background:var(--sand);color:var(--dark);line-height:1.7}
     nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(44,36,32,0.96);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;padding:18px 5%}
     .logo{text-decoration:none;display:flex;align-items:center}
     .nav-links{display:flex;gap:28px;list-style:none}
     .nav-links a{color:#e8ddd5;text-decoration:none;font-size:.85rem;letter-spacing:1px;text-transform:uppercase;transition:color .2s}
     .nav-links a:hover{color:var(--gold)}
     .nav-book{background:var(--gold);color:var(--dark)!important;padding:9px 22px;border-radius:30px;font-weight:600!important}
-    .hero{min-height:100vh;background:linear-gradient(135deg,#1A0A06 0%,#5A1A10 30%,#C0392B 55%,#E8601C 78%,#F0A030 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 20px 60px;position:relative;overflow:hidden}
+    .hero{min-height:100vh;background:linear-gradient(135deg,#0D2B26 0%,#1C4A40 30%,#2A6B5A 55%,#4A9880 78%,#B8D8D0 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 20px 60px;position:relative;overflow:hidden}
     .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 60% 40%,rgba(201,169,110,.15) 0%,transparent 60%)}
     .hero-content{position:relative;z-index:1;max-width:680px}
     .hero-tag{display:inline-block;background:rgba(201,169,110,.15);border:1px solid var(--gold);color:var(--gold);padding:6px 20px;border-radius:20px;font-size:.78rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:24px}
@@ -32,20 +32,20 @@
     .section-tag{font-size:.78rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
     h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.6rem);color:var(--dark);margin-bottom:14px;line-height:1.25}
     .section-sub{color:var(--mid);max-width:540px;margin-bottom:48px;font-size:1rem}
-    .services{background:var(--white)}
+    .services{background:var(--sand)}
     .services-header{text-align:center}
     .services-header .section-sub{margin:0 auto 48px}
     .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:28px;max-width:960px;margin:0 auto}
-    .service-card{background:var(--white);border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.08);transition:transform .3s,box-shadow .3s}
+    .service-card{background:var(--sand);border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.08);transition:transform .3s,box-shadow .3s}
     .service-card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(0,0,0,.12)}
     .card-banner{height:160px;display:flex;align-items:center;justify-content:center;font-size:3.5rem}
     .salt-banner{background:linear-gradient(135deg,#e8ddd5,#d4c4b0)}
-    .red-banner{background:linear-gradient(135deg,#5A1A10,#C0392B)}
+    .red-banner{background:linear-gradient(135deg,#1C4A40,#2A6B5A)}
     .card-body{padding:26px}
     .card-body h3{font-family:'Playfair Display',serif;font-size:1.35rem;margin-bottom:10px}
     .card-body p{color:var(--mid);margin-bottom:18px;font-size:.93rem}
     .benefit-tags{display:flex;flex-wrap:wrap;gap:7px}
-    .tag{background:var(--white);color:var(--mid);padding:4px 12px;border-radius:20px;font-size:.78rem}
+    .tag{background:var(--sand);color:var(--mid);padding:4px 12px;border-radius:20px;font-size:.78rem}
     .how{text-align:center}
     .steps{display:flex;justify-content:center;gap:44px;flex-wrap:wrap;margin-top:48px}
     .step{max-width:210px}
@@ -61,10 +61,10 @@
     .benefit-item h4{color:#fff;font-size:.9rem;margin-bottom:5px}
     .benefit-item p{color:rgba(255,255,255,.45);font-size:.78rem}
     .about-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:960px;margin:0 auto}
-    .about-visual{height:360px;background:linear-gradient(135deg,#5A1A10,#C0392B,#D46A8A);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:5rem}
-    .pricing{background:var(--white);text-align:center}
+    .about-visual{height:360px;background:linear-gradient(135deg,#1C4A40,#2A6B5A,#D46A8A);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:5rem}
+    .pricing{background:var(--sand);text-align:center}
     .pricing-cards{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-top:36px}
-    .pricing-card{background:var(--white);border-radius:16px;padding:32px 28px;min-width:220px;box-shadow:0 4px 20px rgba(0,0,0,.07);border:2px solid transparent}
+    .pricing-card{background:var(--sand);border-radius:16px;padding:32px 28px;min-width:220px;box-shadow:0 4px 20px rgba(0,0,0,.07);border:2px solid transparent}
     .pricing-card.featured{border-color:var(--gold)}
     .pricing-card h3{font-family:'Playfair Display',serif;margin-bottom:8px}
     .price{font-size:1.8rem;font-weight:700;color:var(--gold);margin:10px 0}
@@ -75,11 +75,11 @@
     .info-icon{font-size:1.2rem;margin-top:2px}
     .info-item p{color:var(--mid);font-size:.93rem}
     .info-item strong{color:var(--dark);display:block}
-    .contact-form{background:var(--white);padding:32px;border-radius:16px}
+    .contact-form{background:var(--sand);padding:32px;border-radius:16px}
     .contact-form h3{font-family:'Playfair Display',serif;font-size:1.25rem;margin-bottom:22px}
     .form-group{margin-bottom:14px}
     .form-group label{display:block;font-size:.82rem;font-weight:600;margin-bottom:5px;color:var(--mid);letter-spacing:.5px}
-    .form-group input,.form-group select,.form-group textarea{width:100%;padding:11px 14px;border:1px solid #ddd;border-radius:8px;font-family:'Lato',sans-serif;font-size:.93rem;background:var(--white);color:var(--dark)}
+    .form-group input,.form-group select,.form-group textarea{width:100%;padding:11px 14px;border:1px solid #ddd;border-radius:8px;font-family:'Lato',sans-serif;font-size:.93rem;background:var(--sand);color:var(--dark)}
     .form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--gold)}
     .form-group textarea{resize:vertical;min-height:90px}
     .btn-full{width:100%;text-align:center;padding:14px}
@@ -96,7 +96,7 @@
 <body>
 
 <nav>
-  <a href="index.html" class="logo"><img src="logo.jpg" alt="Salt &amp; Light Wellness" style="height:44px;border-radius:4px;vertical-align:middle"></a>
+  <a href="index.html" class="logo"><img src="logo.jpg" alt="Salt &amp; Light Wellness" style="height:50px;border-radius:8px;vertical-align:middle;mix-blend-mode:screen"></a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#benefits">Benefits</a></li>
@@ -108,7 +108,10 @@
 
 <section class="hero" id="home">
   <div class="hero-content">
-    <img src="logo.jpg" alt="Salt &amp; Light Wellness" style="width:200px;margin-bottom:20px;filter:drop-shadow(0 0 30px rgba(240,160,48,0.5))">
+    <div style="margin-bottom:24px;text-align:center">
+  <div style="font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:#fff;letter-spacing:2px;text-shadow:0 2px 20px rgba(0,0,0,0.3)">SALT <span style="color:#D46A8A">&amp;</span> LIGHT</div>
+  <div style="font-family:'Lato',sans-serif;font-size:1rem;letter-spacing:4px;color:#B8D8D0;text-transform:uppercase;margin-top:4px">wellness</div>
+</div>
     <div class="hero-tag">✦ North Conway, New Hampshire</div>
     <h1>Heal. Restore. <span>Glow.</span></h1>
     <p>Experience the transformative power of salt therapy &amp; red light therapy — private booths, peaceful space, real results.</p>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin — Salt & Light Wellness</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Lato:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#c9a96e;--dark:#2c2420;--mid:#6b4c3b;--sand:#f5ede0;--white:#fffdf9}
+body{font-family:'Lato',sans-serif;background:#f0ebe5;color:var(--dark)}
+.login-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center}
+.login-box{background:#fff;border-radius:16px;padding:40px;width:360px;box-shadow:0 8px 40px rgba(0,0,0,.1);text-align:center}
+.login-box h1{font-family:'Playfair Display',serif;color:var(--gold);margin-bottom:8px}
+.login-box p{color:var(--mid);font-size:.9rem;margin-bottom:24px}
+input{width:100%;padding:12px 14px;border:2px solid #e8ddd5;border-radius:8px;font-size:.95rem;margin-bottom:14px}
+.btn{width:100%;padding:13px;border:none;border-radius:8px;font-size:.95rem;font-weight:600;cursor:pointer;background:var(--gold);color:var(--dark)}
+.admin-layout{display:none;min-height:100vh}
+.sidebar{width:220px;background:var(--dark);min-height:100vh;padding:24px 0;position:fixed}
+.sidebar h2{font-family:'Playfair Display',serif;color:var(--gold);font-size:1.1rem;padding:0 20px 20px;border-bottom:1px solid #3d2820}
+.sidebar nav{margin-top:16px}
+.sidebar a{display:block;padding:12px 20px;color:#e8ddd5;text-decoration:none;font-size:.88rem;transition:.2s}
+.sidebar a:hover,.sidebar a.active{background:rgba(201,169,110,.15);color:var(--gold)}
+.main{margin-left:220px;padding:32px}
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
+.topbar h1{font-family:'Playfair Display',serif;font-size:1.6rem}
+.panel{display:none}.panel.active{display:block}
+.card{background:#fff;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,.06);margin-bottom:20px}
+.stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px}
+.stat{background:#fff;border-radius:12px;padding:20px;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.stat .n{font-size:2rem;font-weight:700;color:var(--gold)}
+.stat .l{font-size:.8rem;color:var(--mid);margin-top:4px}
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+th{text-align:left;padding:10px 12px;background:var(--sand);font-size:.78rem;text-transform:uppercase;letter-spacing:.5px;color:var(--mid)}
+td{padding:10px 12px;border-bottom:1px solid #f0e8e0}
+tr:hover td{background:#fffdf9}
+.badge{padding:3px 10px;border-radius:20px;font-size:.75rem;font-weight:600}
+.badge-pending{background:#fff3cd;color:#856404}
+.badge-confirmed{background:#d1e7dd;color:#0f5132}
+label{display:block;font-size:.82rem;font-weight:600;color:var(--mid);margin:12px 0 5px;text-transform:uppercase;letter-spacing:.5px}
+select{width:100%;padding:10px 12px;border:2px solid #e8ddd5;border-radius:8px;font-size:.9rem;margin-bottom:12px}
+.slot-btn{padding:7px 14px;border:2px solid #e8ddd5;border-radius:6px;background:#fff;cursor:pointer;font-size:.82rem;margin:3px;transition:.2s}
+.slot-btn:hover{border-color:var(--gold);color:var(--gold)}
+.add-btn{background:var(--gold);color:var(--dark);border:none;padding:10px 20px;border-radius:8px;font-weight:600;cursor:pointer;font-size:.88rem}
+</style>
+</head>
+<body>
+
+<div class="login-wrap" id="loginWrap">
+  <div class="login-box">
+    <h1>🌿 Salt & Light</h1>
+    <p>Admin Portal</p>
+    <input type="password" id="pw" placeholder="Password" onkeydown="if(event.key==='Enter')login()">
+    <button class="btn" onclick="login()">Sign In</button>
+  </div>
+</div>
+
+<div class="admin-layout" id="adminLayout">
+  <div class="sidebar">
+    <h2>🌿 Admin</h2>
+    <nav>
+      <a href="#" class="active" onclick="show('dashboard')">📊 Dashboard</a>
+      <a href="#" onclick="show('reservations')">📅 Reservations</a>
+      <a href="#" onclick="show('clients')">👥 Clients</a>
+      <a href="#" onclick="show('slots')">⏰ Availability</a>
+      <a href="#" onclick="show('testimonials')">⭐ Testimonials</a>
+    </nav>
+  </div>
+  <div class="main">
+    <div class="topbar"><h1 id="panelTitle">Dashboard</h1><button onclick="logout()" style="background:none;border:none;color:var(--mid);cursor:pointer;font-size:.85rem">Sign Out</button></div>
+
+    <div class="panel active" id="panel-dashboard">
+      <div class="stat-row">
+        <div class="stat"><div class="n" id="statRes">—</div><div class="l">Total Reservations</div></div>
+        <div class="stat"><div class="n" id="statPending">—</div><div class="l">Pending</div></div>
+        <div class="stat"><div class="n" id="statClients">—</div><div class="l">Clients</div></div>
+        <div class="stat"><div class="n" id="statTest">—</div><div class="l">Pending Reviews</div></div>
+      </div>
+      <div class="card"><h3 style="margin-bottom:16px">Recent Reservations</h3><div id="recentRes"></div></div>
+    </div>
+
+    <div class="panel" id="panel-reservations">
+      <div class="card">
+        <table>
+          <thead><tr><th>Name</th><th>Service</th><th>Date</th><th>Time</th><th>Status</th><th>Action</th></tr></thead>
+          <tbody id="resTable"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="panel" id="panel-clients">
+      <div class="card">
+        <input type="text" id="clientSearch" placeholder="Search by name or email..." oninput="filterClients()" style="margin-bottom:16px">
+        <table>
+          <thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>Waiver</th><th>Joined</th></tr></thead>
+          <tbody id="clientTable"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="panel" id="panel-slots">
+      <div class="card">
+        <h3 style="margin-bottom:16px">Add Availability Slot</h3>
+        <label>Station</label>
+        <select id="slotStation">
+          <option>Small Halo/Red + Salt Booth</option>
+          <option>Medium Halo/Red + Salt Booth</option>
+          <option>PEMI Mat</option>
+        </select>
+        <label>Date</label><input type="date" id="slotDate" style="margin-bottom:12px">
+        <label>Time</label>
+        <div id="timeButtons">
+          ${['9:00 AM','9:30 AM','10:00 AM','10:30 AM','11:00 AM','11:30 AM','12:00 PM','12:30 PM','1:00 PM','1:30 PM','2:00 PM','2:30 PM','3:00 PM','3:30 PM','4:00 PM','4:30 PM','5:00 PM'].map(t=>`<button class="slot-btn" onclick="addSlot('${t}')">${t}</button>`).join('')}
+        </div>
+        <div style="margin-top:16px">
+          <label>Block a Date</label>
+          <input type="date" id="blockDate" style="margin-bottom:8px">
+          <button class="add-btn" onclick="blockDate()">Block This Date</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" id="panel-testimonials">
+      <div class="card"><div id="testList"></div></div>
+    </div>
+  </div>
+</div>
+
+<script>
+let token = '';
+let allClients = [];
+
+async function login() {
+  const pw = document.getElementById('pw').value;
+  const r = await fetch('/api/admin/login', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({password:pw})});
+  const d = await r.json();
+  if (!r.ok) return alert('Wrong password');
+  token = d.token;
+  document.getElementById('loginWrap').style.display='none';
+  document.getElementById('adminLayout').style.display='flex';
+  loadAll();
+}
+
+function logout() { token=''; location.reload(); }
+
+function headers() { return {'Content-Type':'application/json','x-admin-token':token}; }
+
+function show(panel) {
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.sidebar a').forEach(a=>a.classList.remove('active'));
+  document.getElementById('panel-'+panel).classList.add('active');
+  document.getElementById('panelTitle').textContent = {dashboard:'Dashboard',reservations:'Reservations',clients:'Clients',slots:'Availability',testimonials:'Testimonials'}[panel];
+  event.target.classList.add('active');
+}
+
+async function loadAll() {
+  const [res, clients, tests] = await Promise.all([
+    fetch('/api/admin/reservations',{headers:headers()}).then(r=>r.json()),
+    fetch('/api/admin/clients',{headers:headers()}).then(r=>r.json()),
+    fetch('/api/testimonials').then(r=>r.json())
+  ]);
+
+  document.getElementById('statRes').textContent = res.length;
+  document.getElementById('statPending').textContent = res.filter(r=>r.status==='pending').length;
+  document.getElementById('statClients').textContent = clients.length;
+
+  // Reservations table
+  document.getElementById('resTable').innerHTML = res.map(r=>`<tr>
+    <td>${r.name}</td><td>${r.station}</td><td>${r.date}</td><td>${r.time}</td>
+    <td><span class="badge badge-${r.status}">${r.status}</span></td>
+    <td><button onclick="confirmRes(${r.id})" style="font-size:.8rem;padding:4px 10px;border:1px solid #4ade80;border-radius:4px;background:#d1e7dd;cursor:pointer">Confirm</button></td>
+  </tr>`).join('');
+
+  document.getElementById('recentRes').innerHTML = '<table><thead><tr><th>Name</th><th>Service</th><th>Date</th><th>Status</th></tr></thead><tbody>' +
+    res.slice(0,5).map(r=>`<tr><td>${r.name}</td><td>${r.station}</td><td>${r.date}</td><td><span class="badge badge-${r.status}">${r.status}</span></td></tr>`).join('') + '</tbody></table>';
+
+  // Clients
+  allClients = clients;
+  renderClients(clients);
+
+  // Testimonials pending
+  const pendingTests = await fetch('/api/admin/clients',{headers:headers()}).then(()=>0).catch(()=>0);
+  document.getElementById('statTest').textContent = '—';
+}
+
+function renderClients(clients) {
+  document.getElementById('clientTable').innerHTML = clients.map(c=>{
+    const expired = c.waiver_expires_at && new Date(c.waiver_expires_at) < new Date();
+    return `<tr><td>${c.name||'—'}</td><td>${c.email}</td><td>${c.phone||'—'}</td>
+      <td>${c.waiver_signed_at ? (expired ? '⚠️ Expired' : '✅ Valid') : '❌ None'}</td>
+      <td>${c.created_at?.slice(0,10)||'—'}</td></tr>`;
+  }).join('');
+}
+
+function filterClients() {
+  const q = document.getElementById('clientSearch').value.toLowerCase();
+  renderClients(allClients.filter(c=>(c.name||'').toLowerCase().includes(q)||(c.email||'').toLowerCase().includes(q)));
+}
+
+async function confirmRes(id) {
+  await fetch(`/api/admin/reservation/${id}`,{method:'PATCH',headers:headers(),body:JSON.stringify({status:'confirmed'})});
+  loadAll();
+}
+
+async function addSlot(time) {
+  const station = document.getElementById('slotStation').value;
+  const date = document.getElementById('slotDate').value;
+  if (!date) return alert('Pick a date first');
+  await fetch('/api/admin/slots',{method:'POST',headers:headers(),body:JSON.stringify({station,date,time})});
+  alert(`Added ${time} slot for ${date}`);
+}
+
+async function blockDate() {
+  const date = document.getElementById('blockDate').value;
+  if (!date) return alert('Pick a date');
+  await fetch('/api/admin/block',{method:'POST',headers:headers(),body:JSON.stringify({date,reason:'Blocked by admin'})});
+  alert(`${date} blocked`);
+}
+</script>
+</body>
+</html>

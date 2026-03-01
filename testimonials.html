@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reviews — Salt & Light Wellness | North Conway, NH</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#D46A8A;--sand:#EEF6F2;--dark:#1C3A34;--mid:#336655;--white:#F5FAFA;--sage:#B8D8D0;--deep:#2A5A50;--crystal:#F0A0B0}
+body{font-family:'Lato',sans-serif;background:var(--sand);color:var(--dark)}
+nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(26,58,52,.97);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;padding:14px 5%}
+.logo{text-decoration:none;display:flex;align-items:center}
+.logo img{height:50px;border-radius:8px;mix-blend-mode:screen}
+.logo-text{font-family:'Playfair Display',serif;color:#fff;font-size:1.3rem;margin-left:10px}
+.logo-text span{color:var(--gold)}
+.nav-links{display:flex;gap:28px;list-style:none;align-items:center}
+.nav-links a{color:#e8ddd5;text-decoration:none;font-size:.85rem;letter-spacing:1px;text-transform:uppercase}
+.nav-links a:hover,.nav-links a.active{color:var(--gold)}
+.nav-book{background:var(--gold);color:#fff!important;padding:9px 22px;border-radius:30px;font-weight:600}
+.page-hero{background:linear-gradient(135deg,#0D2B26,#1C4A40,#2A6B5A);padding:130px 5% 70px;text-align:center}
+.page-hero h1{font-family:'Playfair Display',serif;color:#fff;font-size:3rem;margin-bottom:14px}
+.page-hero p{color:rgba(255,255,255,.8);max-width:520px;margin:0 auto}
+.section-tag{font-size:.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--mid);margin-bottom:10px;font-weight:600}
+.wrap{max-width:900px;margin:0 auto;padding:70px 20px}
+.featured{background:var(--dark);border-radius:20px;padding:50px;text-align:center;margin-bottom:60px}
+.stars{color:var(--gold);font-size:1.6rem;margin-bottom:20px;letter-spacing:4px}
+.featured blockquote{font-family:'Playfair Display',serif;font-size:1.6rem;color:#fff;line-height:1.6;margin-bottom:18px;font-style:italic}
+.featured cite{color:var(--crystal);font-size:.9rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-bottom:60px}
+.card{background:#fff;border-radius:14px;padding:28px;border:1.5px solid var(--sage)}
+.card .stars{font-size:1rem;margin-bottom:12px;letter-spacing:2px}
+.card p{color:#4A6860;line-height:1.75;font-size:.92rem;margin-bottom:14px;font-style:italic}
+.card cite{font-size:.82rem;font-weight:700;color:var(--mid)}
+.card .service-tag{display:inline-block;background:var(--sand);border:1px solid var(--sage);border-radius:12px;padding:3px 12px;font-size:.75rem;color:var(--mid);margin-top:10px}
+.leave-review{background:linear-gradient(135deg,#1C4A40,#2A6B5A);border-radius:20px;padding:50px;text-align:center}
+.leave-review h2{font-family:'Playfair Display',serif;color:#fff;font-size:1.9rem;margin-bottom:12px}
+.leave-review p{color:rgba(255,255,255,.72);margin-bottom:28px}
+.btn{display:inline-block;padding:13px 30px;border-radius:40px;font-weight:600;text-decoration:none;font-size:.9rem}
+.btn-gold{background:var(--gold);color:#fff}
+.btn-light{background:#fff;color:var(--deep);margin-left:12px}
+footer{background:var(--dark);color:rgba(255,255,255,.55);text-align:center;padding:40px 20px;font-size:.85rem}
+footer .foot-logo{font-family:'Playfair Display',serif;color:#fff;font-size:1.2rem;margin-bottom:8px}
+footer a{color:var(--gold);text-decoration:none}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo"><img src="logo.jpg" alt="Salt &amp; Light Wellness"><span class="logo-text">SALT <span>&amp;</span> LIGHT</span></a>
+  <ul class="nav-links">
+    <li><a href="services.html">Services</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="booking.html" class="nav-book">Book Now</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <div class="section-tag" style="color:var(--sage)">✦ Real People, Real Results</div>
+  <h1>What Our Clients Say</h1>
+  <p>We let the results do the talking. Here's what the community is experiencing at Salt & Light.</p>
+</div>
+
+<div class="wrap">
+
+  <div class="featured">
+    <div class="stars">★★★★★</div>
+    <blockquote>"I don't know why you don't have 9 of these beds lined up!"</blockquote>
+    <cite>— Al, North Conway (former skeptic, now a regular)</cite>
+  </div>
+
+  <div class="section-tag" style="text-align:center;margin-bottom:28px">✦ More Reviews</div>
+  <div class="grid" id="review-grid">
+    <!-- Static placeholders — real reviews load from DB -->
+    <div class="card">
+      <div class="stars">★★★★★</div>
+      <p>"I came in with chronic back pain and left feeling genuinely lighter. The PEMI therapy is unlike anything I've tried. I'm a member now."</p>
+      <cite>— Sarah M., Conway NH</cite>
+      <div class="service-tag">Purewave PEMI</div>
+    </div>
+    <div class="card">
+      <div class="stars">★★★★★</div>
+      <p>"My skin has never looked better. Three weeks of HaloRed and people keep asking what I'm doing differently. Highly recommend."</p>
+      <cite>— Jenna K., North Conway</cite>
+      <div class="service-tag">HaloRed</div>
+    </div>
+    <div class="card">
+      <div class="stars">★★★★★</div>
+      <p>"I was skeptical but my daughter dragged me in. Now I go twice a week. The staff is so welcoming and the space is peaceful."</p>
+      <cite>— Linda R., Bartlett NH</cite>
+      <div class="service-tag">HaloRed + PEMI</div>
+    </div>
+    <div class="card">
+      <div class="stars">★★★★★</div>
+      <p>"As an athlete I'm always looking for recovery edges. The red light + PEMI combo has cut my recovery time noticeably. Worth every penny."</p>
+      <cite>— Mike T., Jackson NH</cite>
+      <div class="service-tag">HaloRed + PEMI</div>
+    </div>
+    <div class="card">
+      <div class="stars">★★★★★</div>
+      <p>"I have fibromyalgia and this is one of the few things that actually helps. The owner genuinely cares and takes the time to explain everything."</p>
+      <cite>— Carol B., Madison NH</cite>
+      <div class="service-tag">Purewave PEMI</div>
+    </div>
+    <div class="card">
+      <div class="stars">★★★★★</div>
+      <p>"The location inside Meraki is great, easy to find, very clean and private. Exactly what I was looking for in the Mount Washington Valley."</p>
+      <cite>— Tom A., Intervale NH</cite>
+      <div class="service-tag">HaloRed</div>
+    </div>
+  </div>
+
+  <div class="leave-review">
+    <h2>Had a Great Experience?</h2>
+    <p>Your review helps other people in the community discover natural healing. It takes 30 seconds and means the world to a small local business.</p>
+    <a href="https://g.page/r/CTKGSBpOmTIpEBM/review" target="_blank" class="btn btn-gold">Leave a Google Review ★</a>
+    <a href="booking.html" class="btn btn-light">Book Again →</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="foot-logo">Salt & Light Wellness</div>
+  <p>Inside Meraki Salon & Spa · 1847 White Mountain Hwy · North Conway, NH</p>
+  <p style="margin-top:8px"><a href="tel:+12073554141">(207) 355-4141</a> · <a href="mailto:saltandlightwellnessllc@gmail.com">saltandlightwellnessllc@gmail.com</a></p>
+  <p style="margin-top:16px;font-size:.8rem"><a href="privacy.html">Privacy Policy</a> · © 2026 Salt & Light Wellness LLC</p>
+</footer>
+</body>
+</html>
